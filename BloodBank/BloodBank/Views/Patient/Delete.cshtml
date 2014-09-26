@@ -1,0 +1,15 @@
+﻿@model BloodBank.Models.Patient
+
+@{
+    ViewBag.Title = "Delete Patient";
+}
+
+<h2>Delete Patient</h2>
+
+<p>
+    Are you sure you want to delete @Model.Name's patient file?
+</p>
+
+<form action="@Url.Action("DeleteConfirm", "Patient", new {id = Model.PatientID})" method="post">
+    <input type="submit" value="Confirm" />
+</form>

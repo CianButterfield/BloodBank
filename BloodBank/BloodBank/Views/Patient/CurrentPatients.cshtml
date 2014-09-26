@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BloodBank.Models.Patient>
+
+@{
+    ViewBag.Title = "Current Patients";
+}
+
+<h2>Current Patients</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        @item.Name<br />
+        <a href="@Url.Action("Details", "Patient", new { id = @item.PatientID })">
+            Details
+        </a>
+        <a href="@Url.Action("Edit", "Patient", new { id = @item.PatientID })">
+            Edit
+        </a>
+        <a href="@Url.Action("Delete", "Patient", new { id = @item.PatientID })">
+            Delete
+        </a>
+    </div>
+}

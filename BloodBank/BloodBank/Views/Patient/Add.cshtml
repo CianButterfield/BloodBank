@@ -1,0 +1,32 @@
+﻿@model BloodBank.Models.Patient
+
+@{
+    ViewBag.Title = "Add new patient";
+}
+
+<h2>Add new patient</h2>
+<form action="@Url.Action("Add", "Patient")" method="post">
+    <div>
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Blood_Group)
+        @Html.TextBoxFor(x => x.Blood_Group)
+        @Html.ValidationMessageFor(x => x.Blood_Group)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Disease)
+        @Html.TextAreaFor(x => x.Disease)
+        @Html.ValidationMessageFor(x => x.Disease)
+    </div>
+
+    <input type="submit" value="Submit" />
+</form>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
